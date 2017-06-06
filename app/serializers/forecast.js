@@ -13,8 +13,9 @@ export default DS.RESTSerializer.extend({
         maxTemp: forecast.temp.max,
         description: forecast.weather[0].main,
         windSpeed: forecast.speed,
+        windDirection: forecast.deg,
         pressure: forecast.pressure,
-        precipitation: forecast.rain
+        rain: forecast.rain
       };
     });
 
