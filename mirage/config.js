@@ -3,7 +3,7 @@ import Response from 'ember-cli-mirage/response';
 export default function() {
 
 
- this.urlPrefix = 'api.openweathermap.org/data/';
+ this.urlPrefix = 'http://api.openweathermap.org/data/';
  this.namespace = '/2.5';
 
  this.get('/forecast/daily', ({ db }) =>{
