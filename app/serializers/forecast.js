@@ -12,6 +12,7 @@ export default DS.RESTSerializer.extend({
         minTemp: forecast.temp.min,
         maxTemp: forecast.temp.max,
         description: forecast.weather[0].main,
+        weatherIcon: forecast.weather[0].icon,
         windSpeed: forecast.speed,
         windDirection: forecast.deg,
         pressure: forecast.pressure,

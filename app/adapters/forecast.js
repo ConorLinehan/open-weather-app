@@ -12,6 +12,6 @@ export default DS.RESTAdapter.extend({
 
   buildURL() {
     let url = this._super(...arguments);
-    return `${url}?APPID=${API_TOKEN}&unit=metric`;
+    return `${url}?APPID=${API_TOKEN}&units=metric`;
   }
 });

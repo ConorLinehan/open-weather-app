@@ -10,7 +10,9 @@
 
     <ul class="results">
       {{#each results as |result|}}
-        <li>{{results.description}}</li>
+        <a>
+          {{forecast-widget forecast=result}}
+        </a>
       {{/each}}
     </ul>
   {{else if cityQuery}}
