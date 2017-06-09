@@ -15,7 +15,7 @@ export default create({
 
   resultCity: text('.city-name'),
   results: collection({
-    itemScope: 'ul.results a'
+    itemScope: '.results a'
   }),
   emptyMessage: isVisible('#empty-message'),
 

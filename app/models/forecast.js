@@ -36,5 +36,29 @@ export default DS.Model.extend({
       let icon = this.get('weatherIcon');
       return `${IMAGE_URL}/${icon}.png`;
     }
+  }).readOnly(),
+
+  windDirectionString: computed('windDirection', {
+    get() {
+      let degree = this.get('windDirection');
+
+      if (11.25 <= degree && degree < 78.75) {
+        return 'North East';
+      } else if (78.75 <= degree && degree < 123.75) {
+        return 'East';
+      } else if (123.75 <= degree && degree < 168.75) {
+        return 'South East';
+      } else if (168.75 <= degree && degree < 191.25) {
+        return 'South';
+      } else if (191.25 <= degree && degree < 258.75) {
+        return 'South West';
+      } else if (258.75 <= degree && degree < 303.75) {
+        return  'West';
+      } else if (303.75 <= degree && degree < 348.75) {
+        return 'North West';
+      } else {
+        return 'North';
+      }
+    }
   }).readOnly()
 });

@@ -1,8 +1,23 @@
-<h1>{{moment-format forecast.dateString "dddd Do"}}</h1>
+<div class="card-header">
+  <h1 class="card-header-title date">{{moment-format forecast.dateString "dddd Do"}}</h1>
+</div>
 
-{{!-- TODO: Icon based on description --}}
-<img src="{{forecast.imagePath}}" alt="">
+<div class="card-content">
+  <div class="media">
+    <div class="media-left">
+      <figure class="image is-48x48">
+        <img src="{{forecast.imagePath}}" alt="{{forecast.description}}">
+      </figure>
+    </div>
+  </div>
+  <div class="media-content">
+    <div class="content">
+      <p class="title is-4">{{forecast.description}}</p>
+    </div>
+  </div>
+</div>
 
-<h1>{{forecast.description}}</h1>
-<small>Low: <strong>{{round forecast.minTemp}}</strong></small>
-<small>High: <strong>{{round forecast.maxTemp}}</strong></small>
+<div class="card-footer">
+  <small class="card-footer-item"> Low: <strong>{{round forecast.minTemp}} &#8451;</strong></small>
+  <small class="card-footer-item"> High: <strong>{{round forecast.maxTemp}} &#8451;</strong></small>
+</div>

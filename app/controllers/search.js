@@ -41,5 +41,7 @@ export default Ember.Controller.extend({
         return '';
       }
     }
-  })
+  }),
+
+  searchDisabled: computed.empty('cityQuery')
 });

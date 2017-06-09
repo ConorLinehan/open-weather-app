@@ -1,10 +1,35 @@
-{{#link-to 'search'}}Back{{/link-to}}
+<div class="nav">
+  <div class="nav-left">
+    <div class="nav-item">
+      {{#link-to 'search'}}Back to Search{{/link-to}}
+    </div>
+  </div>
+</div>
 
-<h1 class="detail-header">{{model.cityName}}</h1>
+<div class="section">
+  <div class="container">
+    <div class="content">
+      <h1 class="detail-header">{{model.cityName}}</h1>
 
-<span>{{model.description}}</span>
-<span>{{model.minTemp}}</span>
-<span>{{model.maxTemp}}</span>
-<span>{{model.windSpeed}}</span>
-<span>{{model.windDirection}}</span>
-<span>{{model.pressure}}</span>
+      <h3>Details:</h3>
+      <ul>
+        <li>
+          <strong>Overview:</strong> {{model.description}}
+        </li>
+        <li>
+          <strong>Min Temp:</strong> {{model.minTemp}} &#8451;
+        </li>
+        <li>
+          <strong>Max Temp:</strong> {{model.maxTemp}} &#8451;
+        </li>
+        <li>
+          <strong>Wind:</strong> {{model.windSpeed}} KM/Hr {{model.windDirectionString}}
+        </li>
+        <li>
+          <strong>Pressure:</strong> {{model.pressure}} hPa
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
