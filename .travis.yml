@@ -22,3 +22,6 @@ install:
 
 script:
   - npm test
+
+after_success:
+  - travis_scripts/deploy.sh
