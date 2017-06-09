@@ -1,0 +1,8 @@
+<h1>{{moment-format forecast.dateString "dddd Do"}}</h1>
+
+{{!-- TODO: Icon based on description --}}
+<img src="{{forecast.imagePath}}" alt="">
+
+<h1>{{forecast.description}}</h1>
+<small>Low: <strong>{{round forecast.minTemp}}</strong></small>
+<small>High: <strong>{{round forecast.maxTemp}}</strong></small>

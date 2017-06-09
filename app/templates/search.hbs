@@ -1,0 +1,23 @@
+{{input value=cityQuery}}
+<button onclick={{perform searchTask}}>Search</button>
+
+
+{{#if searchTask.isRunning}}
+  <h1>Searching</h1>
+{{else}}
+  {{#if results.length}}
+    <h1>Results for <strong>{{cityName}}</strong></h1>
+
+    <ul class="results">
+      {{#each results as |result|}}
+        <a>
+          {{forecast-widget forecast=result}}
+        </a>
+      {{/each}}
+    </ul>
+  {{else if cityQuery}}
+    <h1 id="empty-message">Sorry No Results found</h1>
+  {{else}}
+    <h1>Search for weather above</h1>
+  {{/if}}
+{{/if}}
