@@ -13,14 +13,16 @@ export default create({
   searchInput: fillable('input'),
   submit: clickable('button'),
 
-  resultCity: text('strong'),
+  resultCity: text('.city-name'),
   results: collection({
-    itemScope: 'ul.results li'
+    itemScope: 'ul.results a'
   }),
   emptyMessage: isVisible('#empty-message'),
 
   search(text) {
     return this.searchInput(text)
     .submit();
-  }
+  },
+
+  onDetailPage: isVisible('.detail-header')
 });

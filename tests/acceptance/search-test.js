@@ -24,3 +24,14 @@ test('it alerts user to no results', function(assert) {
     assert.ok(page.emptyMessage, 'shows empty message');
   });
 });
+
+test('it can visit detail page', function(assert) {
+  server.createList('forecast', 16, { cityName: 'London'});
+
+  page.visit();
+  page.search('London');
+  page.results(0).click();
+  andThen(() =>{
+    assert.ok(page.onDetailPage);
+  });
+});

@@ -6,13 +6,13 @@
   <h1>Searching</h1>
 {{else}}
   {{#if results.length}}
-    <h1>Results for <strong>{{cityName}}</strong></h1>
+    <h1>Results for <strong class="city-name">{{cityName}}</strong></h1>
 
     <ul class="results">
       {{#each results as |result|}}
-        <a>
+        {{#link-to 'detail' result.id}}
           {{forecast-widget forecast=result}}
-        </a>
+        {{/link-to}}
       {{/each}}
     </ul>
   {{else if cityQuery}}
